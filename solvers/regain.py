@@ -43,14 +43,18 @@ class Solver(BaseSolver):
                 covariance, precision, n_iter_final = result
                 self.precision_matrix = precision
             else:
-                # Fallback - assume first element is covariance, second is precision
+                # Fallback - assume first element is covariance,
+                # second is precision
                 self.precision_matrix = result[1]
 
         except Exception as e:
-            # If regain fails, fall back to identity matrix with diagonal adjustment
+            # If regain fails, fall back to identity matrix with diagonal
+            # adjustment
             # This is better than completely failing
             print(f"Regain solver failed with error: {e}")
-            print("Falling back to identity matrix estimation")
+            print(
+                "Falling back to identity matrix estimation"
+            )
             diagonal_value = 1.0 / np.trace(self.S) * self.n_features
             self.precision_matrix = np.eye(self.n_features) * diagonal_value
 

@@ -16,7 +16,8 @@ class Solver(BaseSolver):
     name = 'skglm-graphical-lasso'
 
     # List of packages needed to run the solver.
-    requirements = ['skglm>=0.5']
+    requirements = [
+        'pip', 'pip: git+https://github.com/scikit-learn-contrib/skglm@main']
 
     def set_objective(self, X, S, alpha, n_samples, n_features):
         """Set the objective data for the solver."""

@@ -14,7 +14,7 @@ We compare the performance of the Graphical Lasso solvers implemented in
   which is doing almost the same operations as ``ADMM_SGL``. For details, see
   the original paper. [ref3]_
 
-* `sklearn <https://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLasso.html#sklearn.covariance.GraphicalLasso>`_:
+* `sklearn <https://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLasso.html#sklearn.covariance.GraphicalLasso>`_:  # noqa: E501
   by default uses the coordinate descent algorithm which was originally
   proposed by Friedman et al. [ref1]_
 
