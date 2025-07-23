@@ -1,0 +1,22 @@
+# Benchopt configuration file for graphical lasso benchmark
+objective:
+  - graphical_lasso[alpha=0.05]
+  # - graphical_lasso[alpha=0.1]
+  # - graphical_lasso[alpha=0.5]
+
+dataset:
+  - "simulated[p=500,density=0.02,seed=27]"
+
+# Solver selection - comprehensive comparison including modern methods
+solver:
+  - sklearn
+  - skglm-graphical-lasso
+  - skglm-adaptive-graphical-lasso
+  - gglasso
+  - regain
+
+
+
+# note: use more repetitions to have quantiles on the plot
+n-repetitions: 1
+max-runs: 20

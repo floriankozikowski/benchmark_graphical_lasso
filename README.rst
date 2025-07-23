@@ -2,6 +2,13 @@ Template for Benchopt Benchmark repositories
 =============================================
 |Build Template|
 
+This benchmark is a modification of the GGLasso benchmark from the GGLasso package.
+It is still a work in progress.
+
+
+
+#TODO: WRITE README
+
 This repo should be used with the following steps:
 
 1. Hit the `Use this template` button on the top of `this page <https://github.com/benchopt/template_benchmark>`_,
