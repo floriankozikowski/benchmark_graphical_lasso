@@ -1,8 +1,8 @@
 from benchopt import BaseDataset, safe_import_context
+import networkx as nx
 
 with safe_import_context() as import_ctx:
     import numpy as np
-    import networkx as nx
 
 
 class Dataset(BaseDataset):
@@ -32,9 +32,13 @@ class Dataset(BaseDataset):
 
     def get_data(self):
         rng = np.random.default_rng(self.seed)
-        theta_true = self._generate_powerlaw_precision(self.p, self.density, rng)
+        theta_true = self._generate_powerlaw_precision(
+            self.p, self.density, rng
+        )
         sigma_true = np.linalg.inv(theta_true)
-        X = rng.multivariate_normal(np.zeros(self.p), sigma_true, size=self.n_samples)
+        X = rng.multivariate_normal(
+            np.zeros(self.p), sigma_true, size=self.n_samples
+        )
         return dict(X=X, cov_true=sigma_true)
 
     def _generate_powerlaw_precision(self, p, density, rng):

@@ -43,7 +43,8 @@ class Objective(BaseObjective):
 
     def evaluate_result(self, precision):
         """Evaluate the precision matrix estimate."""
-        # Graphical lasso objective: -log det(Theta) + tr(S * Theta) + alpha ||Theta||_1
+        # Graphical lasso objective:
+        # -log det(Theta) + tr(S * Theta) + alpha ||Theta||_1
         log_det = np.linalg.slogdet(precision)[1]
         trace_term = np.trace(self.S @ precision)
         l1_penalty = self.alpha * np.sum(np.abs(precision))

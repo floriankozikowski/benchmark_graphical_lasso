@@ -52,7 +52,7 @@ jobs:
       BENCHOPT_VERSION: ${{ inputs.benchopt_version }}
       PYTEST_EXTRA_ARGS: ${{ inputs.extra_args }}
       BENCHOPT_DEBUG: 1
-      BENCHOPT_CONDA_CMD: mamba
+      BENCHOPT_CONDA_CMD: conda
 
     concurrency:
       group: ${{ github.workflow }}-${{ github.job }}-${{ matrix.os }}-${{ inputs.benchopt_version }}-${{ inputs.extra_args }}-${{ github.ref }}
