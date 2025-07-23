@@ -20,12 +20,3 @@ solver:
 # note: use more repetitions to have quantiles on the plot
 n-repetitions: 1
 max-runs: 20
-
-dependencies:
-  - python=3.10
-  - numpy
-  - networkx
-  - scipy
-  - pip
-  - pip:
-      - "git+https://github.com/scikit-learn-contrib/skglm@main"

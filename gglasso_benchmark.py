@@ -14,14 +14,16 @@ We compare the performance of the Graphical Lasso solvers implemented in
   which is doing almost the same operations as ``ADMM_SGL``. For details, see
   the original paper. [ref3]_
 
-* `sklearn <https://scikit-learn.org/stable/modules/generated/sklearn.covariance.GraphicalLasso.html#sklearn.covariance.GraphicalLasso>`_:  # noqa: E501
+* `sklearn <https://scikit-learn.org/stable/modules/generated/
+    sklearn.covariance.GraphicalLasso.html#sklearn.covariance.GraphicalLasso>`_:
   by default uses the coordinate descent algorithm which was originally
   proposed by Friedman et al. [ref1]_
 
 The results can be generated using the notebook in
-``benchmarks/benchmarks.ipynb`` in the Github repository. From ``GGLasso`` we
-use the standard solver ``ADMM_SGL`` labeled by **gglasso** and the block-wise
-solver labeled by **gglasso-block**. For details, we refer to :ref:`SGL solver`.
+``benchmarks/benchmarks.ipynb`` in the Github repository. From ``GGLasso``
+we use the standard solver ``ADMM_SGL`` labeled by **gglasso** and the
+block-wise solver labeled by **gglasso-block**. For details, we refer to
+:ref:`SGL solver`.
 """
 
 import pandas as pd
@@ -65,8 +67,9 @@ print(
 # %%
 #  Setup
 # ^^^^^^^^^^^^^
-# Each solver terminates after a given number of maximum iterations or when some
-# optimality condition is met. Hence, the performance is difficult to compare as
+# Each solver terminates after a given number of maximum iterations or when
+# some optimality condition is met. Hence, the performance is difficult to
+# compare as
 # these optimality criteria may differ. Thus, we select a range of values for
 # relative (rtol) and absolute (tol) tolerance (used in ADMM) and similarly
 # tolerance values for ``sklearn``.
@@ -92,9 +95,10 @@ print(
 # Runtime and accuracy with respect to :math:`\lambda_1`.
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 #
-# Now, determine a maximal accuracy :math:`\epsilon`. For each solver, we now
+# Now, determine a maximal accuracy :math:`\epsilon`. For each solver, we
 # select the run with minimal runtime where :math:`\text{accuracy}(Z) \leq
-# \epsilon` is fulfilled. We plot the results for two values of :math:`\epsilon`:
+# \epsilon` is fulfilled. We plot the results for two values of
+# :math:`\epsilon`:
 #
 
 # %%
@@ -110,5 +114,7 @@ plot_bm(
 # ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 plot_bm(
-    df, min_acc=5e-2, lambda_list=all_l1
+    df,
+    min_acc=5e-2,
+    lambda_list=all_l1
 )

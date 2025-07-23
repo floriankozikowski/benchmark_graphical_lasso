@@ -79,6 +79,12 @@ jobs:
 
     - run: conda info
 
+    - name: Update environment from environment.yml (if present)
+      run: |
+        if [ -f environment.yml ]; then
+          mamba env update -n $CONDA_ENV -f environment.yml;
+        fi
+
     - name: Install benchopt and its dependencies
       run: |
         conda info

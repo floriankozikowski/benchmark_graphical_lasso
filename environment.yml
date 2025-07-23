@@ -1,0 +1,15 @@
+name: gl_bench
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - networkx
+  - scipy
+  - scikit-learn
+  - pip
+  - pip:
+      - benchopt
+      - regain
+      - gglasso
+      - git+https://github.com/scikit-learn-contrib/skglm@main
