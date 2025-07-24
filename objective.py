@@ -10,7 +10,7 @@ class Objective(BaseObjective):
 
     url = "https://github.com/benchopt/benchmark_graphical_lasso"
 
-    requirements = ["numpy"]
+    requirements = ["numpy", "networkx", "scipy"]
 
     min_benchopt_version = "1.5"
 

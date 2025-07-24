@@ -1,7 +1,8 @@
 from benchopt import BaseDataset, safe_import_context
-import networkx as nx
+
 
 with safe_import_context() as import_ctx:
+    import networkx as nx
     import numpy as np
 
 
