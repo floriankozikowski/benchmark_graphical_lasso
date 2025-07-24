@@ -43,7 +43,7 @@ class Dataset(BaseDataset):
         return dict(X=X, cov_true=sigma_true)
 
     def _generate_powerlaw_precision(self, p, density, rng):
-        G = nx.scale_free_graph(p, seed=rng)
+        G = nx.scale_free_graph(p, seed=self.seed)
         A_bool = nx.to_numpy_array(G) > 0
         mask = rng.random(size=A_bool.shape) < density
         A_bool &= mask
